@@ -1,7 +1,7 @@
 import requests
 from .models import TelegramUser
 
-BOT_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
 
 def process_updates():
