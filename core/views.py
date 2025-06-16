@@ -16,9 +16,12 @@ class PublicNoteListView(APIView):
     
 
     def get(self, request, *args, **kwargs):
-        notes = Note.objects.filter(owner=request.user)
-        serializer = NoteSerializer(notes, many=True)
-        return Response(serializer.data)
+        try:
+            notes = Note.objects.all()  
+            serializer = NoteSerializer(notes, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            return Response({'error': str(e)}, status=500)
     
 class ProtectedNoteCreateView(APIView):
     
