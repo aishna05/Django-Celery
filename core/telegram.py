@@ -16,3 +16,4 @@ def process_updates():
                 username=user.get('username'),
                 telegram_id=user.get('id')
             )
+
