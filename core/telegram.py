@@ -1,4 +1,5 @@
 import requests
+import os
 from .models import TelegramUser
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
